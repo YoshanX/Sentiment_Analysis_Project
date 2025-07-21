@@ -1,0 +1,185 @@
+:root {
+    --primary-color: #4361ee;
+    --positive-color: #4cc9f0;
+    --negative-color: #f72585;
+    --light-bg: #f8f9fa;
+    --dark-text: #2b2d42;
+    --light-text: #8d99ae;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: var(--dark-text);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.split {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+}
+
+.left {
+    left: 0;
+    width: 40%;
+    background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.right {
+    right: 0;
+    width: 60%;
+    background-color: var(--white);
+    padding: 2rem;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.app-subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 50vh;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    object-fit: contain;
+}
+
+.analysis-panel {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sentiment-display {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.sentiment-box {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.sentiment-box.positive {
+    background-color: var(--positive-color);
+    color: white;
+}
+
+.sentiment-box.negative {
+    background-color: var(--negative-color);
+    color: white;
+}
+
+.sentiment-label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sentiment-value {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.analysis-form {
+    margin-bottom: 2rem;
+}
+
+.analysis-form h3, .reviews-section h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: none;
+    margin-bottom: 1rem;
+    transition: border 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.analyze-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.analyze-btn:hover {
+    background-color: #3a0ca3;
+}
+
+.reviews-container {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.review-item {
+    padding: 1rem 0;
+}
+
+.review-item p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.review-divider {
+    height: 1px;
+    background-color: #e9ecef;
+    margin: 1rem 0;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="split left">
+            <div class="centered">
+                <h1 class="app-title">Sentiment Analysis</h1>
+                <p class="app-subtitle">Understand customer feedback at a glance</p>
+                <img src="../static/products/prod1.jpg" alt="Product" class="product-image">
+            </div>
+        </div>
+
+        <div class="split right">
+            <div class="analysis-panel">
+                <div class="sentiment-display">
+                    <div class="sentiment-box positive">
+                        <span class="sentiment-label">Positive</span>
+                        <span class="sentiment-value">{{ data.positive }}</span>
+                    </div>
+                    <div class="sentiment-box negative">
+                        <span class="sentiment-label">Negative</span>
+                        <span class="sentiment-value">{{ data.negative }}</span>
+                    </div>
+                </div>
+
+                <form method="post" class="analysis-form">
+                    <h3>Enter Text to Analyze</h3>
+                    <textarea name="text" placeholder="Type or paste your text here..."></textarea>
+                    <button type="submit" class="analyze-btn">Analyze Sentiment</button>
+                </form>
+
+                <div class="reviews-section">
+                    <h3>Previous Reviews</h3>
+                    <div class="reviews-container">
+                        {% for review in data.reviews %}
+                        <div class="review-item">
+                            <p>{{ review }}</p>
+                            <div class="review-divider"></div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
